@@ -1,0 +1,9 @@
+/out
+/gradle
+/.settings
+/.kotlin
+/.idea
+/build
+/.gradle
+.gradle
+.idea

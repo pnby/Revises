@@ -1,0 +1,30 @@
+name: Revises
+version: '1.2'
+main: me.pink.revises.Revises
+api-version: '1.16'
+
+commands:
+  revise:
+    usage: /revise <start|stoptime|addtime|finish|logs|stop|reload>
+
+permissions:
+  revise.start:
+    description: Allows the player to start a check
+    default: op
+  revise.bypass.check:
+    description: Prevents the player from being called for a check
+    default: op
+  revise.addtime:
+    description: Allows the player to add extra time
+    default: op
+  revise.bypass.addtime:
+    description: Allows the player to add unlimited extra time
+    default: op
+  revise.bypass.cooldown:
+    default: op
+  revise.checklogs:
+    description: Allows the player to check logs
+    default: op
+  revise.reload:
+    description: Allows the player to reload the plugin
+    default: op
