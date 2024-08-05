@@ -43,6 +43,7 @@ class SuspectInventoryEvent: Listener {
     }
     @EventHandler
     fun onPlayerInvMoveItem(event: InventoryMoveItemEvent) {
+        if (event.initiator.holder !is Player) return
         val player = event.initiator.holder as Player
         if (CheckManager.isSuspectUnderCheck(player)) {
             if (!ReviseConfig.suspectInvMoveItem) {
