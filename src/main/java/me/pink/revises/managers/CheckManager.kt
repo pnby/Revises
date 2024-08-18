@@ -1,6 +1,6 @@
 package me.pink.revises.managers
 
-import me.pink.revises.api.internal.Scheduler
+import me.pink.revises.api.Scheduler
 import me.pink.revises.convertColor
 import me.pink.revises.database.repositories.CheckRepository
 import me.pink.revises.database.repositories.CheckRepository.getCheckById
@@ -22,7 +22,8 @@ import java.util.concurrent.ConcurrentHashMap
 
 object CheckManager {
     private lateinit var bossBar: BossBarManager
-    private val scheduler: Scheduler = Scheduler()
+    private val scheduler: Scheduler =
+        Scheduler()
     private val checkSessions = ConcurrentHashMap<Player, CheckSession>()
     private var checkEffects: MutableList<PotionEffectType> = mutableListOf()
 

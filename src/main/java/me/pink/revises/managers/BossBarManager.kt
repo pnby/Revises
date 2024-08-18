@@ -1,6 +1,6 @@
 package me.pink.revises.managers
 
-import me.pink.revises.api.internal.Scheduler
+import me.pink.revises.api.Scheduler
 import me.pink.revises.convertColor
 import me.pink.revises.utils.config.ReviseConfig
 import org.bukkit.Bukkit

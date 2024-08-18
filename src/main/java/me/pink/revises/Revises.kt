@@ -2,8 +2,8 @@ package me.pink.revises
 
 
 import com.j256.ormlite.logger.LocalLog
-import me.pink.revises.api.internal.Metrics
-import me.pink.revises.api.internal.Metrics.SimplePie
+import me.pink.revises.api.Metrics
+import me.pink.revises.api.Metrics.SimplePie
 import me.pink.revises.commands.ReviseCommand
 import me.pink.revises.database.repositories.CheckRepository
 import me.pink.revises.listeners.*

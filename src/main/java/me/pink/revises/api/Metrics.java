@@ -1,4 +1,4 @@
-package me.pink.revises.api.internal;
+package me.pink.revises.api;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

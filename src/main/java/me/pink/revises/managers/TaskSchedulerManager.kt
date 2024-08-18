@@ -1,13 +1,14 @@
 package me.pink.revises.managers
 
-import me.pink.revises.api.internal.Scheduler
+import me.pink.revises.api.Scheduler
 import me.pink.revises.convertColor
 import me.pink.revises.managers.CheckManager.reduceTimeForAllSessions
 import me.pink.revises.utils.config.ReviseConfig
 import org.bukkit.Bukkit
 
 object TaskSchedulerManager {
-    private val scheduler: Scheduler = Scheduler()
+    private val scheduler: Scheduler =
+        Scheduler()
 
     fun runReduceTimeTask() {
         scheduler.runRepeatingTask({
