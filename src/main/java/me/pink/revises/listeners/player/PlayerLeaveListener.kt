@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerQuitEvent
 import org.bukkit.plugin.Plugin
 
 class PlayerLeaveListener(private val plugin: Plugin): Listener {
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGH)
     fun onPlayerLeave(event: PlayerQuitEvent) {
 
         val isUnderChecking = CheckManager.isSuspectUnderCheck(event.player)

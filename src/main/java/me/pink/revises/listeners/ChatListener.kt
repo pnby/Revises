@@ -23,7 +23,7 @@ import me.pink.revises.managers.CheckManager
 import me.pink.revises.utils.CheckSession
 
 class ChatListener : Listener, ChatRenderer {
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGH)
     fun onPlayerChatEvent(event: AsyncChatEvent) {
         val player = event.player
 
@@ -45,7 +45,7 @@ class ChatListener : Listener, ChatRenderer {
         }
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGH)
     fun onPlayerCommand(event: PlayerCommandPreprocessEvent) {
         val player = event.player
 
