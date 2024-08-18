@@ -2,7 +2,7 @@ package me.pink.revises.managers
 
 import me.pink.revises.api.internal.Scheduler
 import me.pink.revises.convertColor
-import me.pink.revises.events.bukkit.PlayerAFKTrack
+import me.pink.revises.listeners.PlayerAFKTrack
 import me.pink.revises.managers.CheckManager.reduceTimeForAllSessions
 import me.pink.revises.utils.config.ReviseConfig
 import org.bukkit.Bukkit

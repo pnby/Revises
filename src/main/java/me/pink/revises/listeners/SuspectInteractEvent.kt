@@ -1,4 +1,4 @@
-package me.pink.revises.events.bukkit
+package me.pink.revises.listeners
 
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener

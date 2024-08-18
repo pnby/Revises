@@ -1,4 +1,4 @@
-package me.pink.revises.events.bukkit
+package me.pink.revises.listeners
 
 import me.pink.revises.convertColor
 import me.pink.revises.managers.CheckManager

@@ -4,7 +4,7 @@ import me.pink.revises.Revises
 import me.pink.revises.convertColor
 import me.pink.revises.database.models.Check
 import me.pink.revises.database.repositories.CheckRepository
-import me.pink.revises.events.bukkit.PlayerAFKTrack
+import me.pink.revises.listeners.PlayerAFKTrack
 import me.pink.revises.managers.CheckManager
 import me.pink.revises.managers.CooldownManager
 import me.pink.revises.utils.RevisePermissions
@@ -228,6 +228,13 @@ class ReviseCommand : CommandExecutor {
         val reasonKey = args[1]
         val reasonMap = parseReasons(Revises.instance.reasonsFile)
 
+        val checkSession = CheckManager.getCheckSession(sender)
+
+        if (checkSession == null) {
+            sender.sendMessage("Вы не находитесь на проверке")
+            return
+        }
+
         val pushCmd = reasonMap.keys.firstOrNull { reasonMap[it]!!.contains(reasonKey) }
 
         if (pushCmd == null) {
@@ -235,13 +242,7 @@ class ReviseCommand : CommandExecutor {
             return
         }
 
-        val checkSession = CheckManager.getCheckSession(sender)
-
-        if (checkSession == null) {
-            sender.sendMessage("Вы не находитесь на проверке")
-            return
-        }
-        CheckManager.disapproveSuspect(checkSession, pushCmd, "guilty")
+        CheckManager.disapproveSuspect(checkSession, pushCmd.replace("%suspect%", checkSession.suspect.name), "guilty")
     }
 
     private fun handleLogsCommand(sender: CommandSender, args: Array<out String>) {

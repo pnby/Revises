@@ -1,4 +1,4 @@
-package me.pink.revises.events.bukkit
+package me.pink.revises.listeners
 
 import me.pink.revises.managers.CheckManager
 import me.pink.revises.utils.config.ReviseConfig

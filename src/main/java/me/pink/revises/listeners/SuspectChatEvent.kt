@@ -1,4 +1,4 @@
-package me.pink.revises.events.bukkit
+package me.pink.revises.listeners
 
 import io.papermc.paper.chat.ChatRenderer
 import io.papermc.paper.event.player.AsyncChatEvent

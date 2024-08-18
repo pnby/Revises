@@ -6,7 +6,7 @@ import me.pink.revises.api.internal.Metrics
 import me.pink.revises.api.internal.Metrics.SimplePie
 import me.pink.revises.commands.ReviseCommand
 import me.pink.revises.database.repositories.CheckRepository
-import me.pink.revises.events.bukkit.*
+import me.pink.revises.listeners.*
 import me.pink.revises.managers.TaskSchedulerManager
 import me.pink.revises.tabcompeters.ReviseTabCompleter
 import me.pink.revises.utils.config.ConfigurationType
@@ -19,7 +19,6 @@ import java.io.File
 
 class Revises : JavaPlugin() {
     lateinit var configurations: Configurations
-    lateinit var reviseCommand: ReviseCommand
     lateinit var reasonsFile: File
 
     override fun onLoad() {

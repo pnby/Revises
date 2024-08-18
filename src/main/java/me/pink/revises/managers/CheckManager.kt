@@ -58,9 +58,6 @@ object CheckManager {
     }
 
     fun disapproveSuspect(checkSession: CheckSession, punishmentCommand: String, reason: String = "endTime") {
-        bossBar.removeInspector(checkSession.inspector)
-        bossBar.removePlayerFromStop(checkSession.inspector)
-        checkSessions.remove(checkSession.suspect)
         val check = getCheckById(checkSession.uid)
 
         if (ReviseConfig.loggingToggle) {
@@ -78,7 +75,10 @@ object CheckManager {
                 }
             }
         }
-        if (ReviseConfig.systemAutoBan) {
+
+        if (reason.equals("endTime", ignoreCase = true) && ReviseConfig.systemAutoBan) {
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), punishmentCommand)
+        } else if (reason.equals("guilty", ignoreCase = true)) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), punishmentCommand)
         }
         cleanUpAfterCheck(checkSession.suspect, checkSession.inspector)
