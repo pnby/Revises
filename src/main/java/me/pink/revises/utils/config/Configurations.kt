@@ -384,7 +384,7 @@ revise.* - полные права от плагина
 
     fun reload() {
         configurations.clear()
-        Revises.instance.initializeConfigurations()
+        Revises.instance.loadConfig()
         ReviseConfig.reload()
     }
 

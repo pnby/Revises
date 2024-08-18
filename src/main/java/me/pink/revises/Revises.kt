@@ -23,7 +23,7 @@ class Revises : JavaPlugin() {
 
     override fun onLoad() {
         instance = this
-        initializeConfigurations()
+        loadConfig()
     }
 
 
@@ -63,7 +63,7 @@ class Revises : JavaPlugin() {
         CheckRepository.close()
     }
 
-    fun initializeConfigurations() {
+    fun loadConfig() {
         configurations = Configurations(this)
         configurations.load()
         configurations.load()
