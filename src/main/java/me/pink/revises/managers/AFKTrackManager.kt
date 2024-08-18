@@ -1,4 +1,4 @@
-package me.pink.revises.listeners
+package me.pink.revises.managers
 
 import me.pink.revises.utils.config.ReviseConfig
 import org.bukkit.Bukkit
@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerQuitEvent
 import java.util.*
 
 
-object PlayerAFKTrack: Listener {
+object AFKTrackManager: Listener {
     private val afkPlayers = mutableSetOf<UUID>()
     private val lastActive = mutableMapOf<UUID, Long>()
     private val afkTimeout = ReviseConfig.considerAFK.toLong() * 1000
