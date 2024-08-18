@@ -2,7 +2,6 @@ package me.pink.revises.managers
 
 import me.pink.revises.api.internal.Scheduler
 import me.pink.revises.convertColor
-import me.pink.revises.listeners.PlayerAFKTrack
 import me.pink.revises.managers.CheckManager.reduceTimeForAllSessions
 import me.pink.revises.utils.config.ReviseConfig
 import org.bukkit.Bukkit
@@ -18,7 +17,7 @@ object TaskSchedulerManager {
 
     fun runAFKTrackTask() {
         scheduler.runRepeatingTask({
-            PlayerAFKTrack.startAFKCheckTask()
+            AFKTrackManager.startAFKCheckTask()
         }, 0L, 1000L)
     }
 

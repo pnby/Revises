@@ -4,7 +4,7 @@ import me.pink.revises.Revises
 import me.pink.revises.convertColor
 import me.pink.revises.database.models.Check
 import me.pink.revises.database.repositories.CheckRepository
-import me.pink.revises.listeners.PlayerAFKTrack
+import me.pink.revises.managers.AFKTrackManager
 import me.pink.revises.managers.CheckManager
 import me.pink.revises.managers.CooldownManager
 import me.pink.revises.utils.RevisePermissions
@@ -63,7 +63,7 @@ class ReviseCommand : CommandExecutor {
                 return
             }
 
-            if (PlayerAFKTrack.inAFKPlayers(player.uniqueId)) {
+            if (AFKTrackManager.inAFKPlayers(player.uniqueId)) {
                 handleAFKSystem(sender, player)
                 return
             }
@@ -94,11 +94,11 @@ class ReviseCommand : CommandExecutor {
 
     private fun handleAFKSystem(sender: Player, player: Player) {
         if (ReviseConfig.AFKSystemIsToggle) {
-            if (PlayerAFKTrack.inAFKPlayers(player.uniqueId)) {
+            if (AFKTrackManager.inAFKPlayers(player.uniqueId)) {
                 sender.sendMessage(ReviseConfig.messageOnAFK.replace("%player%", player.name).convertColor())
                 object : BukkitRunnable() {
                     override fun run() {
-                        if (!PlayerAFKTrack.inAFKPlayers(player.uniqueId)) {
+                        if (!AFKTrackManager.inAFKPlayers(player.uniqueId)) {
                             if (sender.isOnline) {
                                 if (ReviseConfig.runCheck) {
                                     sender.sendMessage(

@@ -22,7 +22,7 @@ import me.pink.revises.convertColor
 import me.pink.revises.managers.CheckManager
 import me.pink.revises.utils.CheckSession
 
-class SuspectChatEvent : Listener, ChatRenderer {
+class ChatListener : Listener, ChatRenderer {
     @EventHandler(priority = EventPriority.HIGHEST)
     fun onPlayerChatEvent(event: AsyncChatEvent) {
         val player = event.player

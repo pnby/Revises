@@ -7,6 +7,12 @@ import me.pink.revises.api.internal.Metrics.SimplePie
 import me.pink.revises.commands.ReviseCommand
 import me.pink.revises.database.repositories.CheckRepository
 import me.pink.revises.listeners.*
+import me.pink.revises.listeners.entity.EntityDamageListener
+import me.pink.revises.listeners.entity.EntityInventoryListener
+import me.pink.revises.listeners.player.PlayerInteractListener
+import me.pink.revises.listeners.player.PlayerLeaveListener
+import me.pink.revises.listeners.player.PlayerMoveListener
+import me.pink.revises.managers.AFKTrackManager
 import me.pink.revises.managers.TaskSchedulerManager
 import me.pink.revises.tabcompeters.ReviseTabCompleter
 import me.pink.revises.utils.config.ConfigurationType
@@ -34,13 +40,15 @@ class Revises : JavaPlugin() {
         TaskSchedulerManager.runReduceTimeTask()
         TaskSchedulerManager.runCheckMessageTask()
 
-        server.pluginManager.registerEvents(SuspectChatEvent(), this)
-        server.pluginManager.registerEvents(SuspectLeaveEvent(this), this)
-        server.pluginManager.registerEvents(SuspectInteractEvent(), this)
-        server.pluginManager.registerEvents(SuspectInventoryEvent(), this)
+        server.pluginManager.registerEvents(ChatListener(), this)
+        server.pluginManager.registerEvents(PlayerLeaveListener(this), this)
+        server.pluginManager.registerEvents(PlayerInteractListener(), this)
+        server.pluginManager.registerEvents(EntityInventoryListener(), this)
+        server.pluginManager.registerEvents(PlayerMoveListener(), this)
+        server.pluginManager.registerEvents(EntityDamageListener(), this)
 
         if (ReviseConfig.AFKSystemIsToggle) {
-            server.pluginManager.registerEvents(PlayerAFKTrack, this)
+            server.pluginManager.registerEvents(AFKTrackManager, this)
             TaskSchedulerManager.runAFKTrackTask()
         }
 

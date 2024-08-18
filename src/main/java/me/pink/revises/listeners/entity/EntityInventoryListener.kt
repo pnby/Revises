@@ -1,4 +1,4 @@
-package me.pink.revises.listeners
+package me.pink.revises.listeners.entity
 
 import me.pink.revises.managers.CheckManager
 import me.pink.revises.utils.config.ReviseConfig
@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityPickupItemEvent
 import org.bukkit.event.inventory.*
 import org.bukkit.event.player.PlayerDropItemEvent
 
-class SuspectInventoryEvent: Listener {
+class EntityInventoryListener: Listener {
     @EventHandler
     fun onPlayerInvInteract(event: InventoryInteractEvent) {
         if (event.whoClicked !is Player) return
