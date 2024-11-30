@@ -42,7 +42,7 @@ object ReviseConfig {
     var effectsIsToggle = Revises.instance.getBoolFromConfig("check.effects.toggle")
     var effects = Revises.instance.getListFromConfig("check.effects.types")
 
-
+    var chatEnable = Revises.instance.getBoolFromConfig("check.chat.enable")
     var chatOnStartMessage = Revises.instance.getStringFromConfig("check.chat.startMessage")
 
     var chatHoverIsToggle = Revises.instance.getBoolFromConfig("check.chat.hover.toggle")
@@ -58,7 +58,6 @@ object ReviseConfig {
     var suspectInvClick = Revises.instance.getBoolFromConfig("check.suspect.inventory.click")
     var suspectInvMoveItem = Revises.instance.getBoolFromConfig("check.suspect.inventory.moveItem")
     var suspectInvPickup = Revises.instance.getBoolFromConfig("check.suspect.inventory.pickupItem")
-
 
     var chatSideModeratorYou = Revises.instance.getListFromMessages("chat.moderator.outgoing")
     var chatSideModeratorPlayer = Revises.instance.getListFromMessages("chat.moderator.incoming")
@@ -155,7 +154,7 @@ object ReviseConfig {
         effectsIsToggle = Revises.instance.getBoolFromConfig("check.effects.toggle")
         effects = Revises.instance.getListFromConfig("check.effects.types")
 
-
+        chatEnable = Revises.instance.getBoolFromConfig("check.chat.enable")
         chatOnStartMessage = Revises.instance.getStringFromConfig("check.chat.startMessage")
 
         chatHoverIsToggle = Revises.instance.getBoolFromConfig("check.chat.hover.toggle")

@@ -2,6 +2,7 @@ package me.pink.revises.listeners
 
 import io.papermc.paper.chat.ChatRenderer
 import io.papermc.paper.event.player.AsyncChatEvent
+import me.pink.revises.Revises
 import net.kyori.adventure.audience.Audience
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.TextComponent
@@ -25,6 +26,7 @@ import me.pink.revises.utils.CheckSession
 class ChatListener : Listener, ChatRenderer {
     @EventHandler(priority = EventPriority.HIGH)
     fun onPlayerChatEvent(event: AsyncChatEvent) {
+        if (!ReviseConfig.chatEnable) { return }
         val player = event.player
 
         val checkSession = CheckManager.getCheckSession(player)

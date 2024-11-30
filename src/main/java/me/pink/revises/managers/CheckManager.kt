@@ -147,10 +147,6 @@ object CheckManager {
         }
     }
 
-    fun getAllSuspects(): List<Player> {
-        return checkSessions.keys.toList()
-    }
-
     private fun giveItem(suspect: Player, date: String) {
         val material = Material.getMaterial(ReviseConfig.prizeItem)
         val loreList = ReviseConfig.prizeItemLore.map {
